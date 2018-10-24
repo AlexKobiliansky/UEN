@@ -1,7 +1,174 @@
-.container
-  background-color: red
+.top-line
+  color: $light-red
+  .logo
+    position: relative
+    z-index: 2
 
-.row
-  background-color: green
+.moto
+  display: inline-block
+  font-family: "PFBeauSansPro", sans-serif
+  font-weight: bold
+  line-height: 1
+  text-transform: uppercase
 
-.row
+.head-contacts
+  float: right
+  margin-top: 26px
+
+.left-hc, .right-hc
+  display: inline-block
+
+.left-hc
+  .recall
+    display: inline-block
+    font-size: 12px
+    text-transform: uppercase
+    text-decoration: underline
+    position: relative
+    line-height: 1
+    padding-left: 24px
+    margin-right: 32px
+    &:hover
+      text-decoration: none
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 20px
+      height: 14px
+      background: url("../img/icons/env.png") no-repeat center center
+      background-size: contain
+
+.right-hc
+  position: relative
+  font-size: 16px
+  font-weight: bold
+  &:before
+    content: ''
+    position: absolute
+    width: 19px
+    height: 19px
+    top: 4px
+    left: -27px
+    background: url("../img/icons/phone.png") no-repeat center center
+    background-size: contain
+
+form.search
+  label
+    display: block
+    max-width: 150px
+    position: relative
+  input
+    width: 102%
+    height: 13px
+    border: 1px solid $accent-blue
+    border-radius: 3px
+    font-size: 12px
+    padding: 0 15px
+    box-sizing: border-box
+  button
+    width: 10px
+    height: 10px
+    border: none
+    background: url("../img/icons/loop.png") no-repeat center center #fff
+    background-size: contain
+    position: absolute
+    right: 1px
+    top: 9px
+
+
+.mnu-line
+  width: 100%
+  padding: 13px 0
+  //height: 50px
+  background-color: $accent-blue
+  position: relative
+  top: -53px
+
+
+.main-mnu
+  padding-left: 195px
+  display: block
+  >ul
+    top: 100%
+    >li
+      display: inline-block
+      text-transform: uppercase
+      margin-right: 18px
+      margin-left: 14px
+      position: relative
+      line-height: 1
+      padding: 0
+      font-size: inherit
+      a
+        color: #fff
+        padding: 0
+        &:hover
+          color: $light-red
+      &:first-child
+        margin-left: 0
+      &:last-child
+        &:after
+          display: none
+      &:after
+        content: ''
+        position: absolute
+        height: 11px
+        width: 2px
+        background-color: #fff
+        right: -18px
+        top: 3px
+      >ul
+        width: 647px
+        li
+          white-space: initial
+  ul
+    top:  208%
+    background-color: $accent-blue
+    //max-width: 100px
+  li
+    display: block
+    padding: 5px 10px
+    line-height: 1.4
+    font-size: 13px
+    a
+      display: block
+      padding: 5px 10px
+    //text-transform: none
+//superfish menu customization
+.sf-menu
+  display: block
+  float: none
+  margin-bottom: 0
+  position: relative
+  height: 100%
+  a
+    color: inherit
+    border-left: none
+    border-top: none
+    padding: 0
+  >li
+    background: none!important
+    float: none
+    //+mt(.3s)
+    a
+      +mt(.5s)
+      outline: none
+    &:hover
+      background: none
+  ul
+    li
+      background: $accent-blue
+      +mt(.5s)
+      &:hover
+        background-color: lighten($accent-blue, 10%)
+        a
+          color: #fff
+
+
+.sf-arrows .sf-with-ul
+  padding-right: 0
+  &:after
+    display: none
+//end superfish menu customization

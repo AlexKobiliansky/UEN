@@ -8,18 +8,45 @@
 
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
-	/**/
+@media only screen and (max-width : 991px)
+  .main-mnu
+    padding-left: 180px
+    >ul>li
+      margin-left: 10px
+      margin-right: 14px
+      font-size: 14px
+      &:after
+        right: -16px
+        top: 1px
+
+  .main-mnu>ul>li>ul
+    width: 487px
 
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
-	/**/
+@media only screen and (max-width : 767px)
+
+  .mnu-line
+    height: 50px
+
+  .container
+    padding-left: 0
+    padding-right: 0
+
+  .head-contacts
+    float: none
+    position: absolute
+    display: block
+    width: 100%
+    text-align: center
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+  .moto
+    font-size: 12px
+    position: relative
+    top: -6px
 
 
 /* Custom, iPhone Retina */

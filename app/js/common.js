@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-
+    $('ul.sf-menu').superfish();
 
     //E-mail Ajax Send
     $("form").submit(function() { //Change
