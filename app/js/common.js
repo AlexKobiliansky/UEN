@@ -40,6 +40,18 @@ $(document).ready(function() {
      * end mobile-mnu customization
      */
 
+
+    $('.intro-slider').slick({
+        infinite: true,
+        speed: 600,
+        fade: true,
+        cssEase: 'linear',
+        autoplay: true,
+        autoplaySpeed: 10000,
+        prevArrow: "<button type='button' class='slick-prev'></button>",
+        nextArrow: "<button type='button' class='slick-next'></button>"
+    });
+
     //E-mail Ajax Send
     $("form").submit(function() { //Change
         var th = $(this);

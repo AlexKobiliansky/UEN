@@ -58,3 +58,28 @@ a, a:hover, a:active, a:focus
 
 a, input, textarea, button
   outline: none
+
+.intro-slider
+  position: relative
+  .slick-next, .slick-prev
+    position: absolute
+    background-color: #fff
+    background-size: 25px 45px
+    background-repeat: no-repeat
+    background-position: center center
+    opacity: .4
+    box-shadow: none
+    border: none
+    +mt(.3s)
+    width: 66px
+    height: 114px
+    top: calc(50% - 57px)
+    z-index: 2
+    &:hover
+      opacity: .6
+  .slick-prev
+    left: 0
+    background-image: url('../img/icons/arrow-left.png')
+  .slick-next
+    right: 0
+    background-image: url('../img/icons/arrow-right.png')

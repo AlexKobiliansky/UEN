@@ -32,6 +32,7 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/superfish/dist/js/superfish.min.js',
 		'app/libs/superfish/dist/js/supersubs.js',
         'app/libs/mmenu/jquery.mmenu.all.js',
+        'app/libs/slick-slider/slick.min.js',
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js')) // минимизируем и соединяем в один файл
