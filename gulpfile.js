@@ -34,6 +34,9 @@ gulp.task('js', ['common-js'], function() {
         'app/libs/mmenu/jquery.mmenu.all.js',
         'app/libs/slick-slider/slick.min.js',
         'app/libs/masonry/masonry.pkgd.js',
+        'app/libs/jquery-circle-progress/circle-progress.min.js',
+        'app/libs/waypoints/lib/jquery.waypoints.min.js',
+        'app/libs/animate-number/jquery.animateNumber.min.js',
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js')) // минимизируем и соединяем в один файл

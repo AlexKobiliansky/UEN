@@ -58,6 +58,36 @@ $(document).ready(function() {
         columnWidth: 1,
     });
 
+
+    $('.adv-stat').circleProgress({
+        value: 0.5,
+        size: 240,
+        thickness: 5,
+        startAngle: 4.72,
+        emptyFill: "#fff",
+        fill: "#fff",
+        animation: {
+            duration: 1600
+        }
+    });
+
+
+    var waypoints = $('.adv-wrap').waypoint(function(direction) {
+        $('.adv-stat span').each(function(){
+           var $val = $(this).data("value");
+           $(this).animateNumber(
+               {
+                   number: $val,
+               },
+               1600
+           );
+        });
+        $('.adv-stat').circleProgress({fill: "#0096ff"});
+        this.destroy();
+    }, {
+        offset: '35%'
+    });
+
     //E-mail Ajax Send
     $("form").submit(function() { //Change
         var th = $(this);
