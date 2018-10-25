@@ -1,0 +1,58 @@
+.main-foot
+  .container
+    padding: 25px 35px 40px
+    background-color: $accent-blue
+    font-size: 12px
+    line-height: 18px
+    color: #a0d6ff
+    position: relative
+
+.dev-block
+  position: absolute
+  right: 15px
+  bottom: 10px
+  font-size: 10px
+  color: lighten(#a0d6ff, 15%)
+
+
+.foot-item
+  a
+    +mt(.4s)
+    &:hover
+      color: darken(#a0d6ff, 20%)
+
+.foot-item:nth-child(2)
+  padding-left: 28px
+
+
+.foot-tel
+  position: relative
+  padding-left: 38px
+  &:before
+    content: ''
+    position: absolute
+    width: 26px
+    height: 26px
+    background: url("../img/icons/foot-tel-icon.png") no-repeat center center
+    background-size: 26px 26px
+    left: 0
+    top: -5px
+
+.foot-email
+  margin-left: -28px
+
+.foot-tel, .foot-email
+  margin-bottom: 18px
+
+.foot-youlink
+  float: right
+  margin-top: 40px
+  a
+    display: inline-block
+    margin-left: 15px
+    position: relative
+    top: -4px
+    filter: brightness(.7)
+    +mt(.4s)
+    &:hover
+      filter: brightness(.5)
