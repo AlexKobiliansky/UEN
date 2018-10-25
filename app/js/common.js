@@ -52,6 +52,12 @@ $(document).ready(function() {
         nextArrow: "<button type='button' class='slick-next'></button>"
     });
 
+
+    $('.grid-content').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: 1,
+    });
+
     //E-mail Ajax Send
     $("form").submit(function() { //Change
         var th = $(this);

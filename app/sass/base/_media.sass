@@ -9,6 +9,21 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
+
+  .grid-item
+    h3
+      font-size: 14px
+      line-height: 1.4
+    &:nth-child(1), &:nth-child(2)
+      padding: 15px 10px
+      h2
+        font-size: 24px
+      p
+        font-size: 14px
+    &:nth-child(2)
+      padding: 25px 30px
+
+
   .main-mnu
     padding-left: 180px
     >ul>li
@@ -46,6 +61,25 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+  .grid-item
+    width: 100%!important
+    height: 205px!important
+    h3
+      left: 85px
+      bottom: 20px!important
+    .grid-item-icon
+      width: 68px!important
+      height: 68px!important
+      line-height: 68px!important
+      bottom: 68px
+      img
+        width: 52px
+        height: 52px
+    &:nth-child(2)
+      text-align: center
+  .grid-about
+    height: auto!important
+
   .intro-slider
     .intro-content
       width: 100%
