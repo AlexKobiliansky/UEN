@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
-
     $('ul.sf-menu').superfish();
-
 
     /**
      * mobile-mnu customization
@@ -87,6 +85,39 @@ $(document).ready(function() {
     }, {
         offset: '35%'
     });
+
+
+    /**
+     * map
+     */
+    ymaps.ready(function(){
+        var mapId = $('#map'),
+            attitude = mapId.data("att"),
+            longtitude = mapId.data("long"),
+            zoom = mapId.data("zoom"),
+            map = new ymaps.Map("map", {
+                center: [attitude, longtitude],
+                controls: ['zoomControl'],
+                zoom: zoom
+            }),
+
+            myGeoObject = new ymaps.GeoObject({
+                geometry: {
+                    type: "Point",
+                    coordinates: [attitude, longtitude]
+                },
+            }, {
+                preset: 'islands#redIcon',
+            });
+
+        map.geoObjects.add(myGeoObject);
+        map.behaviors.disable('scrollZoom');
+        map.behaviors.disable('drag');
+    });
+    /**
+     * END map
+     */
+
 
     //E-mail Ajax Send
     $("form").submit(function() { //Change
