@@ -59,6 +59,26 @@ $(document).ready(function() {
         nextArrow: "<button type='button' class='slick-next'></button>"
     });
 
+    $('.feed-slider').slick({
+        infinite: true,
+        slidesToShow: 2,
+        speed: 600,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        prevArrow: "<button type='button' class='slick-prev'></button>",
+        nextArrow: "<button type='button' class='slick-next'></button>",
+        responsive: [
+            {
+                breakpoint: 960,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+    $('.feed-slider').photoswipe();
+
     if ($(window).width() >= 767) {
         $('.notice-item').equalHeights();
     }

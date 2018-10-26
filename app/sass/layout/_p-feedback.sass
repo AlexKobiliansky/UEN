@@ -1,0 +1,29 @@
+.feedback-wrap
+  padding: 10px 30px
+  text-align: justify
+  margin-bottom: 80px                                       
+
+.feed-slider
+  position: relative
+  margin-top: 20px
+  margin-bottom: 130px
+  .slick-slide
+    outline: none!important
+    img
+      margin-left: auto
+      margin-right: auto
+  .slick-next, .slick-prev
+    position: absolute
+    background-color: #fff
+    width: 25px
+    height: 45px
+    bottom: -80px
+    border: none
+    +bg()
+  .slick-prev
+    left: 40%
+    background-image: url('../img/icons/arrow-left.png')
+  .slick-next
+    right: 40%
+    background-image: url('../img/icons/arrow-right.png')
+
