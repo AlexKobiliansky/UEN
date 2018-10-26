@@ -72,7 +72,7 @@
 				<div class="head-contacts">
 					<div class="left-hc">
 						<div class="recall">
-							<a href="#0">Обратный Звонок</a>
+							<a href="#callback">Обратный Звонок</a>
 						</div>
 						<form class="search">
 							<label>
@@ -420,8 +420,35 @@
 		</div>
 	</footer>
 	<!-- ======= END FOOTER ======= -->
-
 </div>
+
+<!-- ======= MODAL WINDOWS ======= -->
+<div class="hidden">
+	<!-- contact form -->
+	<form class="contact-form popup-form" id="callback">
+
+		<!-- Hidden Required Fields -->
+		<input type="hidden" name="project_name" value="УРАЛЭНЕРГОНАЛАДКА">
+		<input type="hidden" name="admin_email" value="alexey.kobilianskiy@gmail.com">
+		<input type="hidden" name="form_subject" value="Заявка с сайта УРАЛЭНЕРГОНАЛАДКА">
+		<!-- END Hidden Required Fields -->
+
+		<label>
+			<input type="text" placeholder="ФИО" name="Имя" data-validation="custom" data-validation-regexp="^[a-zA-Zа-яА-Я ]{1,20}$" data-validation-error-msg="* Укажите ваше имя">
+		</label>
+
+		<label>
+			<input type="text" class="user-phone" name="Телефон" autocomplete="off" placeholder="ТЕЛ." data-validation="custom" data-validation-regexp="\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" data-validation-error-msg="* Укажите ваш телефон">
+		</label>
+
+		<label>
+			<textarea name="Сообщение"></textarea>
+		</label>
+		<button type="submit" class="btn btn-form">Отправить</button>
+	</form>
+	<!-- end contact form -->
+</div>
+<!-- ======= END MODAL WINDOWS ======= -->
 
 <link rel="stylesheet" href="css/main.min.css">
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>

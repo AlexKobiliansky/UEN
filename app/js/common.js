@@ -138,28 +138,25 @@ $(document).ready(function() {
     /**
      * tabs behavior
      */
-    $('.tab-list').each(function(){                             // Находим список вкладок
-        var $this = $(this);                                      // Сохраняем этот список
-        var $tab = $this.find('li.active');                       // Получаем активный элемент списка
-        var $link = $tab.find('a');                               // Получаем ссылку из активной вкладки
-        var $panel = $($link.attr('href'));                       // Получаем активную панель
+    $('.tab-list').each(function(){
+        var $this = $(this);
+        var $tab = $this.find('li.active');
+        var $link = $tab.find('a');
+        var $panel = $($link.attr('href'));
 
-        $this.on('click', '.tab-control', function(e) {           // При щелчке по вкладке
-            e.preventDefault();                                       // Отменяем действие ссылки
-            var $link = $(this);                                      // Сохраняем текущую ссылку
+        $this.on('click', '.tab-control', function(e) {
+            e.preventDefault();
+            var $link = $(this);
             var id = this.hash;
 
+            if (id && !$link.is('.active')) {
+                $panel.removeClass('active');
+                $tab.removeClass('active');
 
-
-            if (id && !$link.is('.active')) {                         // Если уже не активны
-                $panel.removeClass('active');                           // Деактивируем панель
-                $tab.removeClass('active');                             // Деактивируем вкладку
-
-                $panel = $(id).addClass('active');                      // Делаем новую панель активной
+                $panel = $(id).addClass('active');
                 $tab = $link.parent().addClass('active');
-                Waypoint.refreshAll();// Делаем новую вкладку активной
+                Waypoint.refreshAll();
             }
-
         });
     });
     /**
@@ -182,16 +179,44 @@ $(document).ready(function() {
     //> end useful articles rollup functionality
 
 
+    $(".user-phone").mask("+7 (999) 999-99-99",{autoclear: false});
+
+    $.validate({
+        form : '.contact-form',
+    });
+
+    $(function() {
+        $("a[href='#callback']").magnificPopup({
+            type: "inline",
+            fixedContentPos: !1,
+            fixedBgPos: !0,
+            overflowY: "auto",
+            closeBtnInside: !0,
+            preloader: !1,
+            midClick: !0,
+            removalDelay: 300,
+            mainClass: "popup-zoom-in"
+        })
+
+    });
+
     //E-mail Ajax Send
     $("form").submit(function() { //Change
         var th = $(this);
+        t = th.find(".btn-form").text();
+        th.find(".btn-form").prop("disabled", "disabled").addClass('inactive').text("Сообщение отправлено!");
 
         $.ajax({
             type: "POST",
             url: "mail.php", //Change
             data: th.serialize()
         }).done(function() {
-
+            setTimeout(function() {
+                // Done Functions
+                th.find(".btn-form").removeAttr('disabled').removeClass('inactive').text(t);
+                th.trigger("reset");
+                $.magnificPopup.close();
+            }, 2000);
         });
         return false;
     });

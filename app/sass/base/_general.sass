@@ -10,21 +10,21 @@
     box-sizing: border-box
 
 *::-webkit-input-placeholder
-  color: #666
+  color: #afaeae
   opacity: 1
 
 *:-moz-placeholder
-  color: #666
+  color: #afaeae
   opacity: 1
 
 
 
 *::-moz-placeholder
-  color: #666
+  color: #afaeae
   opacity: 1
 
 *:-ms-input-placeholder
-  color: #666
+  color: #afaeae
   opacity: 1
 
 body input:focus:required:invalid,
@@ -83,6 +83,12 @@ a, input, textarea, button
   .slick-next
     right: 0
     background-image: url('../img/icons/arrow-right.png')
+  .intro-content
+    display: none
+
+.intro-item
+  height: 265px
+
 
 .tab-panel
   display: none
@@ -92,6 +98,7 @@ a, input, textarea, button
 h1
   font-weight: 500
   font-size: 36px
+  line-height: 1.2
   text-transform: uppercase
   color: $accent-blue
 
@@ -102,6 +109,10 @@ h2
   text-transform: uppercase
   color: $accent-blue
   margin-bottom: 20px
+
+h3
+  font-size: 30px
+  font-weight: normal
 
 .notice-block
   margin: 20px 0
@@ -130,3 +141,86 @@ h2
 .images-block
   margin: 25px 0
 
+.btn
+  display: inline-block
+  color: #fff
+  text-transform: uppercase
+  text-align: center
+  background-color: $light-red
+  border: none
+  +mt(.3s)
+  &:hover
+    background-color: darken($light-red, 5%)
+
+form
+  position: relative
+  label
+    position: relative
+    display: block
+    width: 100%
+  input, textarea
+    width: 100%
+    color: #afaeae
+    font-size: 24px
+    border: 1px solid #afaeae
+  textarea
+    resize: none
+    height: 224px
+    padding: 10px
+  input
+    margin-bottom: 30px
+    padding: 10px 30px
+  .btn-form
+    width: 100%
+    font-size: 24px
+    line-height: 1
+    padding: 16px
+    &.inactive
+      filter: grayscale(.6)
+      &:hover
+        background-color: $light-red
+  .help-block
+    color: $accent-red
+    position: absolute
+    top: -20px
+    font-size: 12px
+
+
+form.popup-form
+  max-width: 600px
+  min-width: 320px
+  display: block
+  margin: 0 auto
+  padding: 40px 30px 30px 30px
+  border: 5px solid $accent-blue
+  background-color: #fff
+  textarea
+    margin-bottom: 25px
+  .mfp-close
+    font-size: 40px
+    color: $accent-blue
+    right: -5px
+    top: -5px
+
+
+
+//popup-zoom-in
+.popup-zoom-in
+  .zoom-anim-dialog, #callback
+    opacity: 0
+    transition: all 0.5s ease-in-out
+    transform: scale(0.7)
+  &.mfp-ready .zoom-anim-dialog, &.mfp-ready #callback
+    opacity: 1
+    transform: scale(1)
+  &.mfp-removing .zoom-anim-dialog, &.mfp-removing #callback
+    transform: scale(0.5)
+    opacity: 0
+  &.mfp-bg
+    opacity: 0
+    transition: opacity 0.8s ease-out
+  &.mfp-ready.mfp-bg
+    opacity: .6
+  &.mfp-removing.mfp-bg
+    opacity: 0
+//end popup-zoom-in
