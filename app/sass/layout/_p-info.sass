@@ -1,0 +1,110 @@
+.info-controls
+  display: flex
+  padding-top: 20px
+  padding-left: 12.5%
+  padding-right: 8.33%
+  justify-content: space-between
+  border-bottom: 1px solid $accent-blue
+  li
+    font-weight: 500
+    font-size: 18px
+    color: $accent-blue
+    padding: 4px 0
+    text-transform: uppercase
+    +mt(.3s)
+    border-bottom: 7px solid transparent
+    line-height: 1
+    position: relative
+    &.active
+      border-color: $accent-blue
+    &:before
+      content: ''
+      position: absolute
+      height: 100%
+      width: 20px
+      background-color: $light-red
+      left: -25px
+      opacity: .8
+      top: 0
+      display: none
+
+.obj-slide
+  height: 325px
+  +bg()
+
+.objects-desc
+  padding: 27px 0
+
+.useful-item
+  margin-bottom: 35px
+
+.useful-img
+  height: 214px
+  +bg()
+
+.useful-toggle-img
+  height: 214px
+  width: 400px
+  +bg
+  float: left
+
+.useful-desc
+  position: relative
+  background-color: $accent-blue
+  color: #fff
+  padding: 20px 25px 45px 25px
+  height: 214px
+  .title
+    font-size: 20px
+    margin-bottom: 40px
+  .description
+    height: 75px
+    overflow: hidden
+  .toggle-up
+    display: none
+  .useful-servinfo
+    position: absolute
+    right: 40px
+    bottom: 18px
+    a
+      text-decoration: underline
+      &:hover
+        text-decoration: none
+
+.useful-item.toggle
+  .col-sm-10
+    float: left
+    z-index: 20
+    width: 475px!important
+    margin-right: 16px
+    margin-bottom: 20px
+    .useful-img
+      height: 230px
+  .col-sm-14
+    float: none
+    width: 100%
+    height: auto
+  .useful-desc
+    background-color: #fff
+    color: #000
+    height: auto
+    width: auto
+    padding-left: 0
+    padding-top: 0
+    .useful-servinfo
+      bottom: 5px
+    .toggle-up
+      display: inline-block
+    .toggle-down
+      display: none
+    .title
+      text-transform: uppercase
+      font-family: "PFDinTextPro", sans-serif
+      font-weight: 500
+      color: $accent-blue
+    .description
+      height: auto
+      //overflow: auto
+      overflow: initial
+
+

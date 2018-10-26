@@ -37,6 +37,7 @@ gulp.task('js', ['common-js'], function() {
         'app/libs/jquery-circle-progress/circle-progress.min.js',
         'app/libs/waypoints/lib/jquery.waypoints.min.js',
         'app/libs/animate-number/jquery.animateNumber.min.js',
+        'app/libs/equal-heights/jquery.equalheights.min.js',
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js')) // минимизируем и соединяем в один файл

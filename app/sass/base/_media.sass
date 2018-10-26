@@ -41,6 +41,16 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 959px)
 
+  .useful-item.toggle
+    .col-sm-10
+      width: 375px!important
+
+  .info-controls
+    padding-left: 30px
+    padding-right: 30px
+    li
+      font-size: 16px
+
   .adv-item
     margin-bottom: 50px
 
@@ -50,6 +60,54 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
+
+  .useful-item.toggle
+    .col-sm-10
+      width: 100%!important
+      .useful-img
+        height: 260px
+
+  .useful-img
+    height: 260px
+
+  .row
+    margin-left: 0!important
+    margin-right: 0!important
+
+  .redline-item
+    a
+      font-size: 24px
+
+  .s-redline
+    .col-xs-10
+      padding-left: 0
+    .col-xs-14
+      padding-right: 0
+
+
+  .notice-item
+    &:first-child
+      margin-bottom: 0
+
+  .s-block
+    margin-top: 80px
+    //h1, h2, p
+      margin-left: 10px
+      margin-right: 10px
+  .notice-desc
+    p
+      margin-left: 0
+      margin-right: 0
+
+  .notice-img
+    padding-right: 0
+    height: 300px
+
+  .images-item
+    margin-bottom: 25px
+    &:last-child
+      margin-bottom: 0
+
   .dev-block
     width: 100%
     text-align: center
@@ -92,6 +150,53 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+
+  .useful-item.toggle
+    .col-sm-10
+      .useful-img
+        height: 200px
+
+  .useful-img
+    height: 200px
+
+  .redline-item
+    a
+      font-size: 15px
+      padding: 15px 10px
+      &:after
+        width: 30px
+        height: 30px
+        top: calc(50% - 15px)
+        right: 10px
+
+  .notice-desc
+    padding: 20px 10px
+
+  h1
+    font-size: 24px
+  h2
+    font-size: 20px
+
+  .intro-slider, .objects-slider
+    .slick-next, .slick-prev
+      height: 60px
+      width: 32px
+      top: calc(50% - 30px)
+      background-size: 12px 20px
+
+  .obj-slide
+    height: 150px
+
+  .info-controls
+    display: block
+    li
+      left: 20px
+    li.active
+      border-color: transparent
+      &:before
+        display: block
+
+
   .grid-item
     width: 100%!important
     height: 205px!important

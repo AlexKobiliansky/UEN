@@ -50,6 +50,19 @@ $(document).ready(function() {
         nextArrow: "<button type='button' class='slick-next'></button>"
     });
 
+    $('.objects-slider').slick({
+        infinite: true,
+        speed: 600,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        prevArrow: "<button type='button' class='slick-prev'></button>",
+        nextArrow: "<button type='button' class='slick-next'></button>"
+    });
+
+    if ($(window).width() >= 767) {
+        $('.notice-item').equalHeights();
+    }
+
 
     $('.grid-content').masonry({
         itemSelector: '.grid-item',
@@ -112,11 +125,61 @@ $(document).ready(function() {
 
         map.geoObjects.add(myGeoObject);
         map.behaviors.disable('scrollZoom');
-        map.behaviors.disable('drag');
+
+        if ($(window).width() <= 480) {
+            map.behaviors.disable('drag');
+        }
     });
     /**
      * END map
      */
+
+
+    /**
+     * tabs behavior
+     */
+    $('.tab-list').each(function(){                             // Находим список вкладок
+        var $this = $(this);                                      // Сохраняем этот список
+        var $tab = $this.find('li.active');                       // Получаем активный элемент списка
+        var $link = $tab.find('a');                               // Получаем ссылку из активной вкладки
+        var $panel = $($link.attr('href'));                       // Получаем активную панель
+
+        $this.on('click', '.tab-control', function(e) {           // При щелчке по вкладке
+            e.preventDefault();                                       // Отменяем действие ссылки
+            var $link = $(this);                                      // Сохраняем текущую ссылку
+            var id = this.hash;
+
+
+
+            if (id && !$link.is('.active')) {                         // Если уже не активны
+                $panel.removeClass('active');                           // Деактивируем панель
+                $tab.removeClass('active');                             // Деактивируем вкладку
+
+                $panel = $(id).addClass('active');                      // Делаем новую панель активной
+                $tab = $link.parent().addClass('active');
+                Waypoint.refreshAll();// Делаем новую вкладку активной
+            }
+
+        });
+    });
+    /**
+     * END tabs behavoir
+     */
+
+
+    //> useful articles rollup functionality
+    $('.toggle-down').on('click', function(e){
+        e.preventDefault();
+        $(this).parents('.useful-item').addClass('toggle');
+    });
+
+    $('.toggle-up').on('click', function(e){
+        e.preventDefault();
+        th = $(this).parents('.useful-item');
+        th.removeClass('toggle');
+        $('html').animate({ scrollTop: th.offset().top - 20 }, 100);
+    });
+    //> end useful articles rollup functionality
 
 
     //E-mail Ajax Send

@@ -59,7 +59,7 @@ a, a:hover, a:active, a:focus
 a, input, textarea, button
   outline: none
 
-.intro-slider
+.intro-slider, .objects-slider
   position: relative
   .slick-next, .slick-prev
     position: absolute
@@ -83,3 +83,50 @@ a, input, textarea, button
   .slick-next
     right: 0
     background-image: url('../img/icons/arrow-right.png')
+
+.tab-panel
+  display: none
+.tab-panel.active
+  display: block
+
+h1
+  font-weight: 500
+  font-size: 36px
+  text-transform: uppercase
+  color: $accent-blue
+
+h2
+  font-size: 24px
+  font-family: "PFDinTextPro", sans-serif
+  font-weight: 500
+  text-transform: uppercase
+  color: $accent-blue
+  margin-bottom: 20px
+
+.notice-block
+  margin: 20px 0
+
+.notice-desc
+  background-color: $accent-blue
+  color: #fff
+  line-height: 24px
+  padding: 30px 25px
+  .title
+    font-size: 24px
+    margin-bottom: 10px
+
+.notice-img
+  padding-left: 0
+  padding-right: 10px
+  iframe
+    width: 100%
+    height: 100%
+  .ytp-title
+      display: none!important
+
+.notice-item
+  margin-bottom: 20px
+
+.images-block
+  margin: 25px 0
+
