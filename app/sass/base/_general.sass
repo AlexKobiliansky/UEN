@@ -206,6 +206,38 @@ form.popup-form
     top: -5px
 
 
+.side-wrap
+  +bg()
+  padding: 27px 0
+  color: #fff
+  h1
+    font-weight: 300
+    color: #fff
+    margin-bottom: 15px
+    padding: 0 33px
+  .tab-list
+    padding: 0 33px
+    li
+      font-family: "PFDinTextPro", sans-serif
+      font-size: 14px
+      line-height: 16px
+      padding: 8px 0
+      position: relative
+      border-bottom: 1px solid #fff
+      +mt(.3s)
+      &:before
+        content: ''
+        position: absolute
+        width: 21px
+        height: 27px
+        background-color: $light-red
+        left: -33px
+        top: 8px
+        display: none
+        +mt(.3s)
+      &.active
+        &:before
+          display: block
 
 //popup-zoom-in
 .popup-zoom-in
