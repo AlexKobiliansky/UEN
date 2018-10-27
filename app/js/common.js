@@ -221,7 +221,7 @@ $(document).ready(function() {
     });
 
     //E-mail Ajax Send
-    $("form").submit(function() { //Change
+    $(".contact-form").submit(function() { //Change
         var th = $(this);
         t = th.find(".btn-form").text();
         th.find(".btn-form").prop("disabled", "disabled").addClass('inactive').text("Сообщение отправлено!");
