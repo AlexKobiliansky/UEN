@@ -30,11 +30,12 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!--<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>-->
+    <style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
 
 </head>
 
 <body>
+<div class="preloader"></div>
 <div id="page-content">
     <!-- mobile menu -->
     <nav id="mobile-mnu">
@@ -314,8 +315,12 @@
 
 <!-- ======= MODAL WINDOWS ======= -->
 <div class="hidden">
-    <!-- contact form -->
+    <!-- popup form -->
     <form class="contact-form popup-form" id="callback">
+
+        <div class="form-title">
+            <span>Напишите нам! </span> <br> и мы свяжемся с вами в ближайшее время
+        </div>
 
         <!-- Hidden Required Fields -->
         <input type="hidden" name="project_name" value="УРАЛЭНЕРГОНАЛАДКА">
@@ -324,14 +329,11 @@
         <!-- END Hidden Required Fields -->
 
         <label>
-            <input type="text" placeholder="ФИО" name="Имя" data-validation="custom"
-                   data-validation-regexp="^[a-zA-Zа-яА-Я ]{1,20}$" data-validation-error-msg="* Укажите ваше имя">
+            <input type="text" placeholder="ФИО" name="Имя" data-validation="custom" data-validation-regexp="^[a-zA-Zа-яА-Я ]{1,20}$" data-validation-error-msg="* Укажите ваше имя">
         </label>
 
         <label>
-            <input type="text" class="user-phone" name="Телефон" autocomplete="off" placeholder="ТЕЛ."
-                   data-validation="custom" data-validation-regexp="\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}"
-                   data-validation-error-msg="* Укажите ваш телефон">
+            <input type="text" class="user-phone" name="Телефон" autocomplete="off" placeholder="ТЕЛ." data-validation="custom" data-validation-regexp="\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" data-validation-error-msg="* Укажите ваш телефон">
         </label>
 
         <label>
@@ -339,7 +341,7 @@
         </label>
         <button type="submit" class="btn btn-form">Отправить</button>
     </form>
-    <!-- end contact form -->
+    <!-- end popup form -->
 </div>
 <!-- ======= END MODAL WINDOWS ======= -->
 

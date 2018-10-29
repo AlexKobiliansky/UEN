@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+    $('.preloader').fadeOut();
+
+
     $('ul.sf-menu').superfish();
 
     /**
@@ -164,10 +167,20 @@ $(document).ready(function() {
         var $link = $tab.find('a');
         var $panel = $($link.attr('href'));
 
+
         $this.on('click', '.tab-control', function(e) {
             e.preventDefault();
             var $link = $(this);
             var id = this.hash;
+
+            $(".sidebar").find(".notice-block").each(function(){
+                if($(this).data("id") === id) {
+                    $(this).addClass('active');
+                    $(this).siblings('.notice-block').removeClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            });
 
             if (id && !$link.is('.active')) {
                 $panel.removeClass('active');
@@ -198,7 +211,6 @@ $(document).ready(function() {
     });
     //> end useful articles rollup functionality
 
-
     $(".user-phone").mask("+7 (999) 999-99-99",{autoclear: false});
 
     $.validate({
@@ -219,6 +231,8 @@ $(document).ready(function() {
         })
 
     });
+
+
 
     //E-mail Ajax Send
     $(".contact-form").submit(function() { //Change
